@@ -146,8 +146,8 @@ h1 {
 }
 .reader {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 280px;
-  gap: 44px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
   align-items: start;
 }
 .comic {
