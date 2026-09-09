@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="No Clue‽ — a webcomic archive from Rook Works.">
+  <title>No Clue‽ — Rook Works</title>
+  <link rel="icon" href="public/rook-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="era.css">
+</head>
+<body>
+  <div class="shell">
+    <nav class="rook-nav" aria-label="Rook Works">
+      <a class="rook-brand" href="https://rook.works"><img src="public/rook-mark.svg" alt=""><span>Rook Works</span></a>
+      <span>A comic archive</span>
+    </nav>
+    <header>
+      <div class="brand"><span class="original-title">NO CLUE<em>‽</em></span></div>
+      <p>A slice-of-life webcomic about friendship, fandom, work, and the everyday absurdities surrounding them.</p>
+    </header>
+    <nav class="comic-nav" aria-label="Comic navigation"><a href="#read">Read</a><a href="#archive">Archive</a><a href="#about">About</a></nav>
+    <main id="read">
+      <div class="comic-heading">
+        <div>
+          <div class="eyebrow" id="collection">Archive</div>
+          <p class="page-position" id="position">Preparing located comic pages.</p>
+          <h1 id="title">Loading the archive…</h1>
+        </div>
+      </div>
+      <section class="reader">
+        <div class="comic"><img id="comic-image" alt="" hidden></div>
+        <div class="controls"><button id="previous">← Previous</button><a href="#archive">Archive</a><button id="next">Next →</button></div>
+      </section>
+      <section class="archive-shelf" id="archive">
+        <div class="archive-intro">
+          <div><div class="eyebrow">Collected material</div><h2>The archive.</h2></div>
+          <p>Original pages, reboot work, recovered experiments, and the material that preceded No Clue‽.</p>
+        </div>
+        <div id="archive-groups"></div>
+      </section>
+    </main>
+    <footer id="about"><span>No Clue‽ · a Rook Works project</span><span id="count">0 located pages</span></footer>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+.DS_Store
+Thumbs.db
+content/inbox/*
+!content/inbox/README.md

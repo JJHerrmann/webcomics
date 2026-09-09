@@ -1,0 +1,9 @@
+{
+  "name": "no-clue-archive",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "sync": "node scripts/sync-comics.mjs",
+    "dev": "node scripts/serve.mjs"
+  }
+}
