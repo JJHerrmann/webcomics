@@ -6,13 +6,14 @@ const project = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const source = resolve(project, "content/comics");
 const output = resolve(project, "public/comics.json");
 const allowed = new Set([".png", ".jpg", ".jpeg", ".webp", ".gif", ".avif"]);
+const excludedDirectories = new Set(["panels"]);
 
 async function walk(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
   const files = [];
   for (const entry of entries.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))) {
     const path = resolve(directory, entry.name);
-    if (entry.isDirectory()) files.push(...await walk(path));
+    if (entry.isDirectory() && !excludedDirectories.has(entry.name.toLowerCase())) files.push(...await walk(path));
     else if (allowed.has(extname(entry.name).toLowerCase())) files.push(path);
   }
   return files;

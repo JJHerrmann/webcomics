@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T17:00:39.640Z",
+  "generatedAt": "2026-09-09T17:20:06.268Z",
   "comics": [
     {
       "id": "roll-for-a-save-0",
@@ -364,34 +364,6 @@
       "collection": "The Reboot",
       "image": "content/comics/the-reboot/05.jpg",
       "order": 52
-    },
-    {
-      "id": "the-reboot-panels-artboard-2webcomic-00-01",
-      "title": "Artboard 2webcomic 00 01",
-      "collection": "The Reboot",
-      "image": "content/comics/the-reboot/panels/Artboard%202webcomic_00_01.png",
-      "order": 53
-    },
-    {
-      "id": "the-reboot-panels-panels-01",
-      "title": "Panels 01",
-      "collection": "The Reboot",
-      "image": "content/comics/the-reboot/panels/panels-01.jpg",
-      "order": 54
-    },
-    {
-      "id": "the-reboot-panels-panels-02",
-      "title": "Panels 02",
-      "collection": "The Reboot",
-      "image": "content/comics/the-reboot/panels/panels-02.jpg",
-      "order": 55
-    },
-    {
-      "id": "the-reboot-panels-panels-03",
-      "title": "Panels 03",
-      "collection": "The Reboot",
-      "image": "content/comics/the-reboot/panels/panels-03.jpg",
-      "order": 56
     }
   ]
 }
