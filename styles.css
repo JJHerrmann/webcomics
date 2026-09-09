@@ -23,7 +23,7 @@ a {
   text-decoration: none;
 }
 .shell {
-  width: min(1180px, calc(100% - 48px));
+  width: 80%;
   margin: auto;
 }
 .rook-nav {
