@@ -2,6 +2,7 @@ const title = document.querySelector("#title");
 const collection = document.querySelector("#collection");
 const position = document.querySelector("#position");
 const image = document.querySelector("#comic-image");
+const headerDescription = document.querySelector("header p");
 const archiveGroups = document.querySelector("#archive-groups");
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
@@ -10,6 +11,12 @@ const count = document.querySelector("#count");
 let comics = [];
 let active = 0;
 
+function getEraDescription({ isRfas, isReboot }) {
+  if (isRfas) return "A short-lived webcomic idea written by Bobby Lombardo and illustrated by Jake Herrmann.";
+  if (isReboot) return "An unreleased reboot of the original series, with D. Mongeni and Jake Herrmann reprising their roles as writer and artist.";
+  return "A short-run comic series written by D. Mongeni and illustrated and edited by Jake Herrmann under the Long Haired Syndicate Studios banner. It ran from October 2012 to January 2013. Unlike many webcomics of its era, it was drawn entirely in Illustrator using the shape tool and reusable character models.";
+}
+
 function show(index, updateHash = true) {
   if (!comics.length) return;
   active = Math.max(0, Math.min(index, comics.length - 1));
@@ -17,6 +24,7 @@ function show(index, updateHash = true) {
   const isReboot = comic.collection.toLowerCase().includes("reboot");
   const isUntitled = comic.collection.toLowerCase().includes("untitled");
   const isRfas = comic.collection.toLowerCase().includes("roll for a save");
+  headerDescription.textContent = getEraDescription({ isRfas, isReboot });
   const era = isReboot ? "No Clue‽ The Reboot" : isRfas ? "Roll for a Save" : isUntitled ? "Untitled Webcomic.txt" : "No Clue‽";
   document.title = `${era} — ${comic.title}`;
   title.textContent = comic.title;
@@ -55,11 +63,7 @@ try {
     const eraMark = isRfas
       ? '<img src="public/title-cards/roll-for-a-save.png" alt="Roll for a Save">'
       : `<img class="${isUntitled ? "invert" : ""}" src="public/title-cards/${card}" alt="${era}">`;
-    const eraDescription = isRfas
-      ? "A short-lived webcomic idea written by Bobby Lombardo and illustrated by Jake Herrmann."
-      : isReboot
-        ? "An unreleased reboot of the original series, with D. Mongeni and Jake Herrmann reprising their roles as writer and artist."
-        : "A short-run comic series written by D. Mongeni and illustrated and edited by Jake Herrmann under the Long Haired Syndicate Studios banner. It ran from October 2012 to January 2013. Unlike many webcomics of its era, it was drawn entirely in Illustrator using the shape tool and reusable character models.";
+    const eraDescription = getEraDescription({ isRfas, isReboot });
     const group = document.createElement("section");
     group.className = "archive-group";
     group.innerHTML = `
