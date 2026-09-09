@@ -55,11 +55,17 @@ try {
     const eraMark = isRfas
       ? '<img src="public/title-cards/roll-for-a-save.png" alt="Roll for a Save">'
       : `<img class="${isUntitled ? "invert" : ""}" src="public/title-cards/${card}" alt="${era}">`;
+    const eraDescription = isRfas
+      ? "A short-lived webcomic idea written by Bobby Lombardo and illustrated by Jake Herrmann."
+      : isReboot
+        ? "An unreleased reboot of the original series, with D. Mongeni and Jake Herrmann reprising their roles as writer and artist."
+        : "A short-run comic series written by D. Mongeni and illustrated and edited by Jake Herrmann under the Long Haired Syndicate Studios banner. It ran from October 2012 to January 2013. Unlike many webcomics of its era, it was drawn entirely in Illustrator using the shape tool and reusable character models.";
     const group = document.createElement("section");
     group.className = "archive-group";
     group.innerHTML = `
       <div class="archive-era">
         ${eraMark}
+        <p>${eraDescription}</p>
         <span>${items.length} page${items.length === 1 ? "" : "s"}</span>
       </div>
       <div class="thumbs"></div>
